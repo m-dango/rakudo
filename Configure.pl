@@ -76,7 +76,8 @@ MAIN: {
         'rakudo-repo=s',    'nqp-repo=s',
         'moar-repo=s',      'roast-repo=s',
         'expand=s',         'out=s',
-        'set-var=s@',       'silent-build!'
+        'set-var=s@',       'silent-build!',
+        'force-rebuild!'
       )
       or do {
         print_help();
@@ -170,6 +171,10 @@ General Options:
     --gen-moar[=branch]
                        Download, build, and install a copy of MoarVM to use
                        before writing the Makefile
+    --force-rebuild    
+                       Together with --gen-* options causes corresponding
+                       components to recompile irrelevant to their existence and
+                       version conformance.
     --with-nqp=<path>
                        Provide path to already installed nqp
     --make-install     Install Rakudo after configuration is done
